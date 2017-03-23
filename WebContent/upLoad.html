@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Upload File</title>
+</head>
+<body>
+	<form action="http://localhost:8080/01-firstWeb/servlet/UploadServlet" enctype="multipart/form-data" method="post">
+		<div align="center">
+			<br>
+			<fieldset style="width: 80%">
+				<legend>upload files</legend>
+				<div class="line">
+					<div align="left" class="leftDiv">upload file 1</div>
+					<div align="left" class="rightDiv">
+						<input type="file" name="file1" class="text">
+					</div>
+				</div>
+
+                <div class="line">
+					<div align="left" class="leftDiv">upload file 2</div>
+					<div align="left" class="rightDiv">
+						<input type="file" name="file2" class="text">
+					</div>
+				</div>
+
+                <div class="line">
+					<div align="left" class="leftDiv">upload file 1 description</div>
+					<div align="left" class="rightDiv">
+						<input type="text" name="description1" class="text">
+					</div>
+				</div>
+				
+				<div class="line">
+					<div align="left" class="leftDiv">upload file 2 description</div>
+					<div align="left" class="rightDiv">
+						<input type="text" name="description2" class="text">
+					</div>
+				</div>
+				
+				<div class="line">
+					<div align="left" class="leftDiv"></div>
+					<div align="left" class="rightDiv">
+					    <br>
+						<input type="submit" value="上传文件uploadfile" class="button">
+					</div>
+				</div>
+			</fieldset>
+		</div>
+	</form>
+</body>
+</html>
