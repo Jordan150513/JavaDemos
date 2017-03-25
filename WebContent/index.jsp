@@ -13,8 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
 
 
-<!--  http-equiv="Content-Type" 和 http-equiv="pragma" 有什么区别-->
-<!-- content="text/html 和 content="no-cache" 有什么区别？ -->
+<!--  http-equiv="Content-Type" content="text/html 和 http-equiv="pragma" content="no-cache有什么区别-->
 
 <title>首页</title>
 <meta http-equiv="pragma" content="no-cache">
