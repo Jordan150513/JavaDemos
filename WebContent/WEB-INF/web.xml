@@ -144,13 +144,28 @@
     <servlet-name>Test</servlet-name>
     <url-pattern>/servlet/Test</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <servlet-name>ForwardServlet</servlet-name>
     <servlet-class>com.helloqiaodan.firstweb.ForwardServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ForwardServlet</servlet-name>
     <url-pattern>/servlet/ForwardServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RedirectServlet</servlet-name>
+    <servlet-class>com.helloqiaodan.firstweb.RedirectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RedirectServlet</servlet-name>
+    <url-pattern>/servlet/RedirectServlet</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>ThreadSafetyServlet</servlet-name>
+    <servlet-class>com.helloqiaodan.firstweb.ThreadSafetyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ThreadSafetyServlet</servlet-name>
+    <url-pattern>/servlet/ThreadSafetyServlet</url-pattern>
   </servlet-mapping>
 </web-app>
