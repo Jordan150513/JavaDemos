@@ -6,9 +6,12 @@
     private static final String KEY = ":cookie@qiaodan.com";
     public final static String calcMD5(String ss){
     	String s = ss==null?"":ss;
+    	System.out.println("s:"+s);
     	char hexDigests[] = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
     	try{
+    		
     		byte[] strTemp = s.getBytes();
+    		System.out.println("strTemp"+strTemp);
     		MessageDigest mdTemp = MessageDigest.getInstance("MD5");
     		mdTemp.update(strTemp);
     		byte[] md = mdTemp.digest();
@@ -17,9 +20,11 @@
     		int k=0;
     		for(int i=0;i<j;i++){
     			byte byte0 = md[j];
-    			str[k++]=hexDigests[byte0>>>4 & 0xf];
+    			System.out.println("byte0:"+byte0);
+    			str[k++]=hexDigests[byte0 >>> 4 & 0xf];
     			str[k++]=hexDigests[byte0 & 0xf];
     		}
+    		System.out.println("10str:"+str.toString());
     		return new String(str);
     		
     	}catch(Exception e){
@@ -32,19 +37,21 @@
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
     String action = request.getParameter("action");
+    System.out.println("1action:"+action);
     if("login".equals(action)){
     	String account = request.getParameter("account");
     	String password = request.getParameter("password");
-    	
+    	System.out.println("2account+password:"+account+password);
     	int timeout = new Integer(request.getParameter("timeout"));
     	String ssid = calcMD5(account+KEY);
-    	
+    	System.out.println("3account+KEY:"+account+KEY);
+    	System.out.println("4ssid:"+ssid);
     	Cookie accountCookie = new Cookie("account",account);
     	accountCookie.setMaxAge(timeout);
     	
-    	Cookie ssidCookie = new Cookie("ssid","ssid");
+    	Cookie ssidCookie = new Cookie("ssid",ssid);
     	ssidCookie.setMaxAge(timeout);
-    	
+    	System.out.println(ssidCookie);
     	response.addCookie(accountCookie);
     	response.addCookie(ssidCookie);
     	
@@ -67,15 +74,20 @@
     String ssid = null;
     
     if(request.getCookies()!=null){
+    	System.out.println("5getCookies:"+request.getCookies());
     	for(Cookie cookie:request.getCookies()){
     		if(cookie.getName().equals("account"))
     			account = cookie.getValue();
+    		System.out.println("6account:"+account);
     		if(cookie.getName().equals("ssid")) ssid = cookie.getValue();
+    		System.out.println("7ssid:"+ssid);
     	}
     }
     
     if(account!=null && ssid!=null){
+    	System.out.println("calcMD5(account+KEY):"+calcMD5(account+KEY));
     	login = ssid.equals(calcMD5(account+KEY));
+    	System.out.println("8login:"+login);
     }
     %>
     
@@ -87,6 +99,7 @@
 </head>
 <body>
 	<fieldset>
+	<% System.out.println("9login:"+login); %>
 		<legend><%=login?"Welcome Back!":"Please Login first!" %></legend>
 		<% if(login){ %>
 		Welcome,${cookie.account.value}.&nbsp;&nbsp;
