@@ -9,7 +9,7 @@
     }else if("AccountException".equals(action)){
     	throw new AccountException("Account is Failed!");
     }else{
-    	/*Integer.parseInt("");  */
+    	Integer.parseInt(""); 
     }
     
     %>
