@@ -64,6 +64,18 @@
   	<filter-name>CharacterEncodingFilter</filter-name>
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
+
+  <listener>
+  	<listener-class>
+  		com.qiaodan.listener.ListenerTest
+  	</listener-class>
+  </listener>
+  
+    <listener>
+  	<listener-class>
+  		com.qiaodan.listener.SessionAttributeListener
+  	</listener-class>
+  </listener>
   
   <servlet>
     <servlet-name>UploadFile</servlet-name>

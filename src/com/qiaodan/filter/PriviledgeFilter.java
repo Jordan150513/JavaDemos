@@ -33,7 +33,7 @@ public class PriviledgeFilter implements Filter {
 		action = action==null?"":action;
 		String uri = requestURI+"?action="+action;
 		String role = (String)request.getSession(true).getAttribute("role");
-		role = role==null?"guest":role;
+		role = role==null?"guest":role;                                                                                                              
 		boolean authentificated = false;
 		for(Object obj:pp.keySet()){
 			String key = (String) obj;
