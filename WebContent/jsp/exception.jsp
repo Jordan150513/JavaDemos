@@ -7,6 +7,6 @@
 <title>Exception</title>
 </head>
 <body>
-
+${message}
 </body>
 </html>
