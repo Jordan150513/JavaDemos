@@ -44,7 +44,7 @@ public class ExceptionHandlerFileter implements Filter {
 				arg0.getRequestDispatcher("/businessException.jsp").forward(arg0, arg1);
 			}else{
 				// normal exception
-				arg0.getRequestDispatcher("/exception.jsp").forward(arg0, arg1);
+//				arg0.getRequestDispatcher("/exception.jsp").forward(arg0, arg1);
 			}
 			}
 		}
