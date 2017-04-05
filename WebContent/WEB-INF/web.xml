@@ -61,20 +61,7 @@
     <filter-name>CharacterEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-  
-  <filter>
-    <filter-name>OutputReplaceFilter</filter-name>
-    <filter-class>com.qiaodan.filter.OutputReplaceFilter</filter-class>
-    <init-param>
-      <param-name>file</param-name>
-      <param-value>/WEB-INF/sensitive.properties</param-value>
-    </init-param>
-  </filter>
-  <filter-mapping>
-    <filter-name>OutputReplaceFilter</filter-name>
-    <url-pattern>/jsp/Test.jsp</url-pattern>
-  </filter-mapping>
-  
+ 
   
   <listener>
     <listener-class>
