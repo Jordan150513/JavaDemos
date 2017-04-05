@@ -52,7 +52,8 @@
 	<form action="${pageContext.request.requestURI }?action=login" method="post">
 	account:
 	<input name="account" />
-	<input type="submit" value="login "/>
+	<input type="submit" value="login "/><br />
+
 	</form>
 	</c:otherwise>
 </c:choose>
