@@ -9,6 +9,19 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <filter>
+    <filter-name>OutputReplaceFilter</filter-name>
+    <filter-class>com.qiaodan.filter.OutputReplaceFilter</filter-class>
+    <init-param>
+      <param-name>file2</param-name>
+      <param-value>/WEB-INF/sensitive.properties</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>OutputReplaceFilter</filter-name>
+    <url-pattern>Test.jsp</url-pattern>
+  </filter-mapping>
+  
   
   <filter>
     <filter-name>PriviledgeFilter</filter-name>
@@ -22,7 +35,6 @@
     <filter-name>PriviledgeFilter</filter-name>
     <url-pattern>*.do</url-pattern>
   </filter-mapping>
-  
   <filter>
     <filter-name>ExceptionHandlerFileter</filter-name>
     <filter-class>com.qiaodan.filter.ExceptionHandlerFileter</filter-class>
@@ -31,7 +43,6 @@
     <filter-name>ExceptionHandlerFileter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-  
   <filter>
     <filter-name>LogFilter</filter-name>
     <filter-class>com.qiaodan.filter.LogFilter</filter-class>
@@ -40,7 +51,6 @@
     <filter-name>LogFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-  
   <filter>
     <filter-name>ImageRedirectFilter</filter-name>
     <filter-class>com.qiaodan.filter.ImageRedirectFilter</filter-class>
@@ -49,7 +59,6 @@
     <filter-name>ImageRedirectFilter</filter-name>
     <url-pattern>/image/goods/*</url-pattern>
   </filter-mapping>
-  
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>
     <filter-class>com.qiaodan.filter.CharacterEncodingFilter</filter-class>
@@ -66,26 +75,21 @@
     <filter-name>CharacterEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-  
   <listener>
     <listener-class>
   		com.qiaodan.listener.ListenerTest
   	</listener-class>
   </listener>
-  
   <listener>
     <listener-class>
   		com.qiaodan.listener.SessionAttributeListener
   	</listener-class>
   </listener>
-  
-    <listener>
+  <listener>
     <listener-class>
   		com.qiaodan.listener.LoginSessionListener
   	</listener-class>
   </listener>
-  
-  
   <servlet>
     <servlet-name>UploadFile</servlet-name>
     <servlet-class>com.qd.UploadFile</servlet-class>
