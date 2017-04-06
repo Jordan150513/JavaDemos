@@ -61,23 +61,35 @@
     <filter-name>CharacterEncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
- 
-  
   <listener>
     <listener-class>
   		com.qiaodan.listener.LoginSessionListener
   	</listener-class>
   </listener>
-  
   <listener>
     <listener-class>
   		com.qiaodan.listener.ListenerTest
   	</listener-class>
   </listener>
-  
   <listener>
     <listener-class>
   		com.qiaodan.listener.SessionAttributeListener
+  	</listener-class>
+  </listener>
+  
+    <listener>
+    <listener-class>
+  		com.qiaodan.listener.MyContextListener
+  	</listener-class>
+  </listener>
+     <listener>
+    <listener-class>
+  		com.qiaodan.listener.MySessionListener
+  	</listener-class>
+  </listener>
+     <listener>
+    <listener-class>
+  		com.qiaodan.listener.MyRequestLintener
   	</listener-class>
   </listener>
   
@@ -89,7 +101,6 @@
     <servlet-name>UploadFile</servlet-name>
     <url-pattern>/Servlet/UploadFile</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>LifeCycleServlet</servlet-name>
     <servlet-class>com.helloqiaodan.firstweb.LifeCycleServlet</servlet-class>
@@ -102,7 +113,6 @@
     <servlet-name>LifeCycleServlet</servlet-name>
     <url-pattern>/servlet/LifeCycleServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>HelloServlet</servlet-name>
     <servlet-class>com.helloqiaodan.firstweb.HelloServlet</servlet-class>
@@ -111,7 +121,6 @@
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/servlet/HelloServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>FirstServlet</servlet-name>
     <servlet-class>com.helloqiaodan.firstweb.FirstServlet</servlet-class>
@@ -120,7 +129,6 @@
     <servlet-name>FirstServlet</servlet-name>
     <url-pattern>/servlet/FirstServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>RequestServlet</servlet-name>
     <servlet-class>com.helloqiaodan.firstweb.RequestServlet</servlet-class>
@@ -129,7 +137,6 @@
     <servlet-name>RequestServlet</servlet-name>
     <url-pattern>/servlet/RequestServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>IdentityServlet</servlet-name>
     <servlet-class>com.helloqiaodan.firstweb.IdentityServlet</servlet-class>
@@ -138,7 +145,6 @@
     <servlet-name>IdentityServlet</servlet-name>
     <url-pattern>/servlet/IdentityServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>InitParamServlet</servlet-name>
     <servlet-class>com.helloqiaodan.firstweb.InitParamServlet</servlet-class>
@@ -159,7 +165,6 @@
     <servlet-name>InitParamServlet</servlet-name>
     <url-pattern>/servlet/InitParamServlet</url-pattern>
   </servlet-mapping>
-  
   <context-param>
     <param-name>upload folder</param-name>
     <param-value>attachment</param-value>
@@ -168,7 +173,6 @@
     <param-name>allowed file type</param-name>
     <param-value>.gif,.jpg,.bmp</param-value>
   </context-param>
-  
   <servlet>
     <servlet-name>ContextParamServlet</servlet-name>
     <servlet-class>com.helloqiaodan.firstweb.ContextParamServlet</servlet-class>
@@ -177,7 +181,6 @@
     <servlet-name>ContextParamServlet</servlet-name>
     <url-pattern>/servlet/ContextParamServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>InjectionServlet</servlet-name>
     <servlet-class>com.helloqiaodan.firstweb.InjectionServlet</servlet-class>
@@ -186,7 +189,6 @@
     <servlet-name>InjectionServlet</servlet-name>
     <url-pattern>/servlet/InjectionServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>UploadServlet</servlet-name>
     <servlet-class>com.helloqiaodan.firstweb.UploadServlet</servlet-class>
@@ -195,7 +197,6 @@
     <servlet-name>UploadServlet</servlet-name>
     <url-pattern>/servlet/UploadServlet</url-pattern>
   </servlet-mapping>
-  
   <env-entry>
     <env-entry-name>hello</env-entry-name>
     <env-entry-type>java.lang.String</env-entry-type>
