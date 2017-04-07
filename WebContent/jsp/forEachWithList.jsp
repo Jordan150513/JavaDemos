@@ -14,6 +14,7 @@
     person.setSex("female");
     person.setSecrete(true);
     person.setPassword("123qiao");
+    personList.add(person);
     
     Person person2 = new Person();
     person2.setName("dan");
@@ -21,6 +22,9 @@
     person2.setSex("male");
     person2.setSecrete(false);
     person2.setPassword("qiao123");
+    personList.add(person2);
+    
+    request.setAttribute("personList",personList);
     System.out.println(personList);
     %>
     
@@ -49,5 +53,41 @@
 				</tr>
 			</c:forEach>
 	</table>
+	<br />
+	
+	<table>
+		<tr>
+			<td class="header">HeaderName</td>
+			<td class="header">HeaderValue</td>
+		</tr>
+		<c:forEach var="item" items="${header }">
+			<tr>
+				<td>${item.key }</td>
+				<td>${item.value }</td>
+			</tr>
+		</c:forEach>
+	</table>
+	<br />
+	
+	<table>
+		<tr class="title">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<c:forEach items=${personList } var="personOne" varStatus="varStatus">
+				<tr bgcolor="${varStatus.index%2==1?'#EFEFEF':'#FFFFFF' }">
+					<td>${personOne.name }</td>
+					<td>${personOne.age }</td>
+					<td>${personOne.sex }</td>
+					<td>${personOne.secrete }</td>
+					<td>${personOne.password }</td>
+				</tr>
+			</c:forEach>
+	</table>
+	
 </body>
 </html>
