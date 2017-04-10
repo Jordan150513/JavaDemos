@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instancs" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd" version="2.0">
+
+<tlibversion>1.0</tlibversion>
+<jspversion>1.1</jspversion>
+<shortname>taglib</shortname>
+<uri>http://www.helloqiaodan.com/firstweb</uri>
+<info>A simple taglib for the examples</info>
+<tag>
+	<name>copyright</name>
+	<tagclass>com.helloqiaodan.firstweb.Copyright</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>To lower case tag</info>
+</tag>
+</taglib>
