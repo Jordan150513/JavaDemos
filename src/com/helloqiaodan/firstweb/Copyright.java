@@ -17,7 +17,7 @@ public class Copyright implements Tag {
 	public int doEndTag() throws JspException {
 		JspWriter out = pageContext.getOut();
 		try{
-			out.println("<div align=center style='line-height:22px;font-size=12px;'>");
+			out.println("<div align=center style='line-height:22px;font-size:12px;'>");
 			out.println(ResourceBundle.getBundle("copyright").getString("copyright"));
 			out.println("qiao");
 			out.println("</div>");
