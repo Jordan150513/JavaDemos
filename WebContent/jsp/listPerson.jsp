@@ -34,8 +34,8 @@ try{
 <script type="text/javascript">
 	 uncheckedAll=function(){
 		 alert(" uncheck all");
-		var array= document.getElementByName("id"); 
-		System.out.println(array);  
+		var array= document.getElementsByName("id"); 
+		alert(array);
 		for(var i=0;i<array.length;i++){
 			array[i].checked=false;
 		}
@@ -43,7 +43,7 @@ try{
 	
 	checkedAll = function(){
 		alert(" check all");
-		var array= document.getElementByName("id"); 
+		var array= document.getElementsByName("id"); 
 		alert(array);
 		for(var i=0;i<array.length;i++){
 			array[i].checked=true;
