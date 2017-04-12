@@ -31,10 +31,30 @@ try{
 	stmt = conn.createStatement();
 	rs = stmt.executeQuery("select * from tb_person");
 %>
-
+<script type="text/javascript">
+	 uncheckedAll=function(){
+		 alert(" uncheck all");
+		var array= document.getElementByName("id"); 
+		System.out.println(array);  
+		for(var i=0;i<array.length;i++){
+			array[i].checked=false;
+		}
+	}
+	
+	checkedAll = function(){
+		alert(" check all");
+		var array= document.getElementByName("id"); 
+		alert(array);
+		for(var i=0;i<array.length;i++){
+			array[i].checked=true;
+			}
+	}
+	</script>
+	
 <form action = operatePerson.jsp method="get">
 	<table bgcolor="#cccccc" cellspacing=1 cellpadding=5 width=100%>
 		<tr bgcolor="#dddddd">
+			<th></th>
 			<th>ID</th>
 			<th>Name</th>
 			<th>English Name</th>
@@ -57,6 +77,7 @@ try{
 			String description = rs.getString("description");
 			
 			out.println("<tr bgcolor=#FFFFFF>");
+			out.println("<td><input type=checkbox name=id value="+id+" /></td>");
 			out.println("<td>"+id+"</td>");
 			out.println("<td>"+name+"</td>");
 			out.println("<td>"+englishName+"</td>");
@@ -78,8 +99,8 @@ try{
 		<tr>
 			<td>
 				<input type='hidden' value='del' name='action' />
-				<a href="#" onclick="var array= document.getElementByName('id');for(var i=0;i<array.length;i++){array[i].checked=true;}">all checked</a>
-				<a href="#" onclick="var array= document.getElementByName('id');for(var i=0;i<array.length;i++){array[i].checked=false">all unchecked</a>
+				<a href="#" onclick=checkedAll() >all checked</a>
+				<a href="#" onclick=uncheckedAll() >all unchecked</a>
 				<input type="submit" onclick="return confirm('will delete all the person records');" value="delete" />
 			</td>
 		</tr>
