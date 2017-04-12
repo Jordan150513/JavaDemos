@@ -66,8 +66,8 @@ try{
 			out.println("<td>"+description+"</td>");
 			out.println("<td>"+createTime+"</td>");
 			out.println("<td>");
-			out.println("<a href='operatePerson.jsp' action=del&id="+id+"'onclick='return confirm(\"confirm delete the person?\")'>delete</a>");
-			out.println("<a href='operatePerson.jsp' action=edit&id="+id+"'onclick='return confirm(\"confirm delete the person?\")'>edite</a>");
+			out.println("<a href='operatePerson.jsp?action=del&id="+id+"' onclick='return confirm(\"confirm delete the person?\")'>delete</a>");
+			out.println("<a href='operatePerson.jsp?action=edit&id="+id+"' onclick='return confirm(\"confirm edite the person?\")'>edite</a>");
 			out.println("</td>");
 			out.println("</tr>");
 		}

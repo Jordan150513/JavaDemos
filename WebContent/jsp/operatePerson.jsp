@@ -40,6 +40,13 @@
    			if(conn!=null) conn.close();
    			if(stmt!=null) stmt.close();
    		}
+   		out.println("<html><style>body{font-size:12px;line-height:25px}</style><body>");
+   		out.println(result+" record person is added into the database.");
+   		out.println("<a href='listPerson.jsp'>go back to the person list</a>");
+   		out.println("<br /><br />executed SQL :"+sql);
+   		out.println("</body></html>");
+   		return;
+   	
    		// add action finished
     }else if("del".equals(action)){
     	
@@ -55,7 +62,7 @@
     	}
     	
     	String sql = "DELETE FROM tb_person WHERE id IN("+condition+") ";
-    	
+    	System.out.println("----------"+sql);
     	Connection conn = null;
    		Statement stmt = null;
     	try{
@@ -64,6 +71,7 @@
    			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/databaseWebQD?characterEncoding=UTF-8", "root", "1234");
    			stmt = conn.createStatement();
    			int result = stmt.executeUpdate(sql);
+   			System.out.println("----------"+result);
     		out.println("<html><style>body{font-size:12px;line-height:25px;}</style><body>");
     		out.println(result+"records is deleted. ");
     		out.println("<a href='listPerson.jsp'>go back to the PersonList page</a>");
@@ -76,30 +84,34 @@
     		if(conn!=null) conn.close();
    			if(stmt!=null) stmt.close();
     	}
+
     	// del action finished
     }else if("edit".equals(action)){
     	
     	String id = request.getParameter("id");
+    	System.out.println("ttttt----------"+id);
     	String sql = "SELECT * FROM tb_person WHERE id="+id;
     	Connection conn = null;
     	Statement stmt = null;
     	ResultSet rs = null;
+    	System.out.println("----------"+sql);
     	try{
     		
     		DriverManager.registerDriver(new com.mysql.jdbc.Driver());
    			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/databaseWebQD?characterEncoding=UTF-8", "root", "1234");
    			stmt = conn.createStatement();
    			rs = stmt.executeQuery(sql);
+   			System.out.println("----------"+rs);
     		if(rs.next()){
     			request.setAttribute("id", rs.getString("id"));
     			request.setAttribute("name", rs.getString("name"));
-    			request.setAttribute("englishName", rs.getString("englishName"));
+    			request.setAttribute("englishName", rs.getString("english_name"));
     			request.setAttribute("age", rs.getString("age"));
     			request.setAttribute("sex", rs.getString("sex"));
     			request.setAttribute("birthday", rs.getString("birthday"));
     			request.setAttribute("description", rs.getString("description"));
-    			request.setAttribute("action", rs.getString("action"));
-    			request.getRequestDispatcher("/addPerson.jsp").forward(request, response);
+    			request.setAttribute("action", action);
+    			request.getRequestDispatcher("addPerson.jsp").forward(request, response);
     		}else{
     			out.println("not find the id is "+id+" record person.");
     		}
@@ -115,8 +127,9 @@
     	// edite action finished
     }else if("save".equals(action)){
     	
-    	String id = request.getParameter("save");
-    	String sql = "UPDATE tb_person SET"+"name '"+forSQL(name)+"',"+"english_name '"+forSQL(englishName)+"',"+"sex '"+forSQL(sex)+"',"+"age '"+forSQL(age)+"',"+"birthday '"+forSQL(birthday)+"',"+"description '"+"',"+"WHERER id="+id;
+    	String id = request.getParameter("id");
+    	String sql = "UPDATE tb_person SET "+"name ='"+forSQL(name)+"',"+"english_name ='"+forSQL(englishName)+"',"+"sex ='"+forSQL(sex)+"',"+"age ='"+forSQL(age)+"',"+"birthday ='"+forSQL(birthday)+"',"+"description ='"+forSQL(description)+"' WHERE id="+id;
+    	System.out.println("----------"+sql);
     	Connection conn = null;
     	Statement stmt = null;
     	try{
