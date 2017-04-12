@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.sql.Connection;
 
 /**
- * 连接oracle数据库
+ * 连接oracle数据库 别人的 
  * @author lyons(zhanglei)
  */
 public final class DbConn
