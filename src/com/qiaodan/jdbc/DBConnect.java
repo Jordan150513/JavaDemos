@@ -21,7 +21,7 @@ public class DBConnect {
 	
 	public static  Connection getconn() throws SQLException{
 		Driver driver = new com.mysql.jdbc.Driver();
-		String url = "jdbc:mysql://127.0.0.1:3306";
+		String url = "jdbc:mysql://127.0.0.1:3306/databaseWebQD?characterENcoding=UTF-8&useSSL=false";
 		Properties info = new Properties();
 		info.put("user", "root"); // or user:qiaodan password:1234
 		info.put("password", "1234");
