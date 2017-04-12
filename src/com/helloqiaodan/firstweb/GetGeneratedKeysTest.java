@@ -27,6 +27,8 @@ public class GetGeneratedKeysTest {
 //			rs.next();
 //			System.out.println("id: "+rs.getInt(1));
 			
+			// Your SQLException clearly states that:
+			// You need to specify Statement.RETURN_GENERATED_KEYS to the  Statement.executeUpdate() or Connection.prepareStatement().
 			PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			ps.setString(1, "bubu");
 			ps.setString(2, "BuBu");
