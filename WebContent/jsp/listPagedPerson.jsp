@@ -46,8 +46,8 @@
      %>
 
 	<form action="operatePerson.jsp" method="get">
-    		<table>
-    			<tr>
+    		<table bgcolor=#CCCCCC cellspacing=1 cellpadding=5 width=100%>
+    			<tr bgcolor=#DDDDDD>
     				<th>ID</th>
     				<th>name</th>
     				<th>English_name</th>

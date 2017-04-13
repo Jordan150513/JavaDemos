@@ -10,11 +10,11 @@ public class Pagination {
 		}
 		
 		StringBuffer buffer = new StringBuffer();
-		buffer.append("NO. "+pageNum+" /"+pageCount+" page. Total "+recordCount+" records");
-		buffer.append(pageNum==1?"first page":"<a href='"+url+"pageNum=1'>first page<a/>");
-		buffer.append(pageNum==1?"Pre page":"<a href='"+url+"pageNum="+(pageNum-1)+"'>pre page</a>");
-		buffer.append(pageNum==pageCount?"next page":"<a href='"+url+"pageNum="+(pageNum+1)+"'>next page</a>");
-		buffer.append(pageNum==pageCount?"last page":"<a href='"+url+"pageNum="+pageCount+"'>last page</a>");
+		buffer.append("NO."+pageNum+"/"+pageCount+"page  Total"+recordCount+"records");
+		buffer.append(pageNum==1?"  first_page":"<a href='"+url+"pageNum=1'>  first_page<a/>");
+		buffer.append(pageNum==1?"  Pre_page":"<a href='"+url+"pageNum="+(pageNum-1)+"'>  pre_page</a>");
+		buffer.append(pageNum==pageCount?"  next_page":"<a href='"+url+"pageNum="+(pageNum+1)+"'> next_page</a>");
+		buffer.append(pageNum==pageCount?"   last_page":"<a href='"+url+"pageNum="+pageCount+"'>   last_page</a>");
 		return buffer.toString();
 	}
 }
