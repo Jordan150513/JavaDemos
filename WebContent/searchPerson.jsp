@@ -123,7 +123,7 @@
     	 			<tr>
     	 				<td style="text-align: right">name</td>
     	 				<td style="text-align: left">
-    	 					<input type="text" name="name" value="${param.name} " /> 
+    	 					<input type="text" name="name" value="${param.name}" /> 
     	 				</td>
     	 				<td style="text-align: right">sex</td>
     	 				<td style="text-align: left">
@@ -138,19 +138,19 @@
     	 			<tr>
     	 				<td style="text-align: right">english name</td>
     	 				<td style="text-align: left">
-    	 					<input type="text" name="english_name" value="${param.english_name} " /> 
+    	 					<input type="text" name="english_name" value="${param.english_name}" /> 
     	 				</td>
     	 				<td style="text-align: right">description</td>
     	 				<td style="text-align: left">
-    	 					<input type="text" name="description" value="${param.description} " /> 
+    	 					<input type="text" name="description" value="${param.description}" /> 
     	 				</td>
     	 			</tr>
     	 			
     	 			<tr>
     	 				<td colspan=4> birthday from
-    	 				<input type="text" name="birthdayStart"  value="${param.birthdayStart }"/>
+    	 				<input type="text" name="birthdayStart"  value="${param.birthdayStart}"/>
     	 				to 
-    	 				<input type="text" name="birthdayEnd" value="${param.birthdayEnd }"/>
+    	 				<input type="text" name="birthdayEnd" value="${param.birthdayEnd}"/>
     	 				</td>
     	 			</tr>
     	 			<tr>
