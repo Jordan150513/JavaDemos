@@ -13,7 +13,7 @@
     
     <%
     //create some data to show
-    for(int i=0;i<5;i++){
+/*     for(int i=0;i<5;i++){
     	Employee ee = new Employee();
     	ee.setName("wang_"+i);
     	ee.setSex(i%2==1?"1":"0");
@@ -22,7 +22,7 @@
     	ee.setDepartment(DepartmentDAO.find(departID));
     	EmployeeDAO.insert(ee);
     	System.out.println(ee.toString());
-    }
+    } */
     
     List<Employee> list = EmployeeDAO.listEmployee();
     request.setAttribute("employeeList", list);
