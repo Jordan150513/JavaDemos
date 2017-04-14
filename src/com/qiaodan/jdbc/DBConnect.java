@@ -25,6 +25,28 @@ public class DBConnect {
 //		System.out.println(conn);
 //	}
 	
+	public static int executeUpdate(String sql) throws SQLException{
+		return executeUpdate(sql,new Object[]{});
+	}
+	
+	public static int executeUpdate(String sql, Object... params) throws SQLException {
+		Connection conn = null;
+		PreparedStatement preStmt = null;
+		
+		try{
+			
+			conn = getconn();
+			preStmt = conn.prepareStatement(sql);
+			setParams(preStmt,params);
+			return preStmt.executeUpdate();
+			
+		}finally{
+			if(preStmt!=null) preStmt.close();
+			if(conn!=null) conn.close();
+		}
+
+	}
+
 	public static  Connection getconn() throws SQLException{
 		Driver driver = new com.mysql.jdbc.Driver();
 		String url = "jdbc:mysql://127.0.0.1:3306/databaseWebQD?characterENcoding=UTF-8&useSSL=false";
