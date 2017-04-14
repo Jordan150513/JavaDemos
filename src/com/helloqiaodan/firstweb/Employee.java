@@ -4,6 +4,12 @@ import java.util.Date;
 
 public class Employee {
 
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", sex=" + sex + ", employedDate=" + employedDate
+				+ ", department=" + department + "]";
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -51,5 +57,6 @@ public class Employee {
 	private Date employedDate;
 	
 	private Department department;
+
 	
 }

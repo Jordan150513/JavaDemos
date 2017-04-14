@@ -63,7 +63,7 @@ public class EmployeeDAO {
 		}
 		
 		//list all the Employee
-		public static List<Employee> listDepartment() throws SQLException{
+		public static List<Employee> listEmployee() throws SQLException{
 			List<Employee> list = new ArrayList<Employee>();
 			
 			String sql = "select * from tb_employee order by id DESC";

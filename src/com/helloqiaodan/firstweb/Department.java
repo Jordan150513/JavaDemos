@@ -2,6 +2,10 @@ package com.helloqiaodan.firstweb;
 
 public class Department {
 	
+	@Override
+	public String toString() {
+		return "Department [id=" + id + ", name=" + name + "]";
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -17,5 +21,6 @@ public class Department {
 	
 	private Integer id;
 	private String name;
+	
 	
 }
