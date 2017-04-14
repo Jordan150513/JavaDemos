@@ -1,16 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="java.util.Date" %>
     <%
      String action = (String)request.getAttribute("action");
      String id = (String)request.getAttribute("id");
      String name = (String)request.getAttribute("name");
-     String englishName = (String)request.getAttribute("englishName");
-     String age = (String)request.getAttribute("age");
-     String sex = (String)request.getAttribute("sex");
-     String birthday = (String)request.getAttribute("birthday");
-     String description = (String)request.getAttribute("description");
+     String department = (String)request.getAttribute("department");
+     Integer sex = (Integer)request.getAttribute("sex");
+     Date employedDate = (Date)request.getAttribute("employedDate");
      boolean isEdit = "edit".equals(action);
-     boolean isMale = isEdit&&"男".equals(sex);
+     boolean isMale = isEdit&&(sex==0);  // 1--female 0---male
     %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -32,27 +31,19 @@
 					<td><input type="text" name="name" value="<%=isEdit?name:"" %>" /></td>
 				</tr>
 				<tr>
-					<td>englishName</td>
-					<td><input type="text" name="englishName" value="<%=isEdit?englishName:"" %>" /></td>
+					<td>department</td>
+					<td><input type="text" name="englishName" value="<%=isEdit?department:"" %>" /></td>
 				</tr>
 				<tr>
 					<td>sex</td>
 					<td>
-						<input type="radio" name="sex" value="male" id="sex_male" <%=isMale?"checked":"" %> /><label>male</label>
-						<input type="radio" name="sex" value="femal" id="sex_female" <%=isMale?"":"checked" %> /><label>female</label>
+						<input type="radio" name="sex" value=0 id="sex_male" <%=isMale?"checked":"" %> /><label>male</label>
+						<input type="radio" name="sex" value=1 id="sex_female" <%=isMale?"":"checked" %> /><label>female</label>
 					</td>
 				</tr>
 				<tr>
-					<td>age</td>
-					<td><input type="text" name="age" value="<%=isEdit?age:"" %>" /></td>
-				</tr>
-				<tr>
-					<td>birthday</td>
-					<td><input type="text" name="birthday" value="<%=isEdit?birthday:"" %>" /></td>
-				</tr>
-				<tr>
-					<td>description</td>
-					<td><input type="text" name="description" value="<%=isEdit?description:"" %>" /></td>
+					<td>employedDate</td>
+					<td><input type="text" name="age" value="<%=isEdit?employedDate:"" %>" /></td>
 				</tr>
 				<tr>
 					<td></td>
