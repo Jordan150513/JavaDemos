@@ -32,7 +32,7 @@
     
     String nameSearch = request.getParameter("name");
     String sexSearch = request.getParameter("sex");
-    String englishNameSearch = request.getParameter("englishName");
+    String englishNameSearch = request.getParameter("english_name");
     String birthdayStartSearch = request.getParameter("birthdayStart");
     String birthdayEndSearch = request.getParameter("birthdayEnd");
     String descriptionSearch = request.getParameter("description");
@@ -100,12 +100,13 @@
      }
      
      String countSQL = "select count(*) from tb_person "+whereClause;
-     
+     System.out.println("-------"+countSQL);
      int recordCount = DBConnect.getCount(countSQL);
+     System.out.println("-------"+recordCount);
      int pageCount = (recordCount+pageSize)/pageSize;
      
      String querySQL = "select * from tb_person "+whereClause+" limit "+(pageNum-1)*pageSize+","+pageSize;
-     
+     System.out.println("-------"+querySQL);
      Connection conn = null;
      Statement stmt = null;
      ResultSet rs = null;
@@ -127,7 +128,7 @@
     	 				</td>
     	 				<td style="text-align: right">sex</td>
     	 				<td style="text-align: left">
-    	 					<select>
+    	 					<select name="sex">
     	 						<option value="">no limit</option>
     	 						<option value="male" ${'male'==param.sex?'selected':"" }>male</option>
     	 						<option value="female" ${'female'==param.sex?'selected':"" }>female</option>
