@@ -15,7 +15,7 @@ public class MyBatisTest {
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		SqlSession session = sqlSessionFactory.openSession();
-		User user = new User("zhangsan","male",26);
+		User user = new User("LiSi","female",20);
 		session.insert("com.qiaodan.mapper.UserMapper.save", user);
 		session.commit();
 		session.close();

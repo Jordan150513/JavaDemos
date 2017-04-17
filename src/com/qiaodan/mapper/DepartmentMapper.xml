@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qiaodan.mapper.DepartmentMapper">
-	<insert id="save" parameterType="com.helloqiaodan.firstweb.User" useGenerateKeys="true">
-		insert into tb_user(name,sex,age)values(#{name},#{sex},#{age})
+	<insert id="save" parameterType="com.helloqiaodan.firstweb.Department" useGeneratedKeys="true">
+		insert into tb_department(name)values(#{name})
 	</insert>
 </mapper>
