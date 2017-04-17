@@ -24,20 +24,16 @@
     String employedDate = request.getParameter("employedDate");
     String action = request.getParameter("action");
    	System.out.println("-----"+action+name+departmentid+employedDate+sex);
+   	String employeeId = request.getParameter("id");
    	
     if("add".equals(action)){
     	System.out.println("-----"+action);
-    	
     	Department partment = DepartmentDAO.find(Integer.parseInt(departmentid));
-    	System.out.println("-----!---"+partment);
-    	
     	Employee ee = new Employee();
     	ee.setName(name);
     	ee.setSex(sex);
     	ee.setEmployedDate(employedDate);
     	ee.setDepartment(partment);
-    	
-    	System.out.println("------!!--"+ee);
     	int result = EmployeeDAO.insert(ee);
    		out.println("<html><style>body{font-size:12px;line-height:25px}</style><body>");
    		out.println(result+" record employee is added into the database.");
@@ -48,7 +44,7 @@
    		// add action finished
     }else if("del".equals(action)){
     	System.out.println("---?--"+action);
-    	
+    	EmployeeDAO.delete(Integer.valueOf(employeeId));
 
     	// del action finished
     }else if("edit".equals(action)){

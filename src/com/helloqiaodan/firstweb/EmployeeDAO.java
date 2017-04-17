@@ -25,6 +25,12 @@ public class EmployeeDAO {
 			return DBConnect.executeUpdate(sql, employee.getDepartment().getId(),employee.getName(),employee.getSex(),employee.getEmployedDate());
 		}
 
+		// delet an employee
+		public static int delete(Integer id) throws SQLException{
+			String sql = "delete from tb_employee  where id=?";
+			return DBConnect.executeUpdate(sql, id);
+		}
+
 		
 		// find
 		public static Employee find(Integer id) throws SQLException{

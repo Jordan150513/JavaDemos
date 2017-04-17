@@ -25,6 +25,7 @@
 <title>List Employee</title>
 </head>
 <body>
+	<a href="addEmployee.jsp?action=add">Add Employee</a>
 	<form action="listEmployee.jsp" method="get">
 	 	<table bgcolor=#CCCCCC cellspacing=1 cellpadding=5 width=100%>
 	 		<tr bgcolor=#DDDDDD>
