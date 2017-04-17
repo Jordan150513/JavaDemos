@@ -1,6 +1,6 @@
 package com.qiaodan.jdbc;
 
-import java.sql.Date;
+import java.util.Date;
 import java.sql.Driver;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -38,6 +38,7 @@ public class DBConnect {
 			conn = getconn();
 			preStmt = conn.prepareStatement(sql);
 			setParams(preStmt,params);
+			System.out.println("----preStmt:"+preStmt);
 			return preStmt.executeUpdate();
 			
 		}finally{
@@ -101,10 +102,11 @@ public class DBConnect {
 		}else if(param instanceof Boolean){
 			stmt.setBoolean(i, (Boolean)param);
 		}else if(param instanceof Date){
-			stmt.setDate(i, (Date)param);
+			stmt.setDate(i, (java.sql.Date)param);
 		}
 		
 		}
+		System.out.println("stmt--setparm--:"+stmt);
 		
 	}
 }

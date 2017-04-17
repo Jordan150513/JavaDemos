@@ -15,6 +15,7 @@ public class EmployeeDAO {
 		// insert
 		public static int insert(Employee employee) throws SQLException{
 			String sql = "insert into tb_employee (department_id,name,sex,employed_date) values (?,?,?,?)";
+			System.out.println(sql);
 			return DBConnect.executeUpdate(sql, employee.getDepartment().getId(),employee.getName(),employee.getSex(),employee.getEmployedDate());
 		}
 		
@@ -43,7 +44,7 @@ public class EmployeeDAO {
 					Employee employee = new Employee();
 					employee.setId(id);
 					employee.setName(rs.getString("name"));
-					employee.setEmployedDate(rs.getDate("employed_date"));
+					employee.setEmployedDate(rs.getString("employed_date"));
 					employee.setSex(rs.getString("sex"));
 					Department d = DepartmentDAO.find(rs.getInt("department_id"));
 					employee.setDepartment(d);
@@ -80,7 +81,7 @@ public class EmployeeDAO {
 					Employee employee = new Employee();
 					employee.setId(rs.getInt("id"));
 					employee.setName(rs.getString("name"));
-					employee.setEmployedDate(rs.getDate("employed_date"));
+					employee.setEmployedDate(rs.getString("employed_date"));
 					employee.setSex(rs.getString("sex"));
 					Department d = DepartmentDAO.find(rs.getInt("department_id"));
 					employee.setDepartment(d);

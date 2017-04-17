@@ -25,6 +25,8 @@
     } */
     
     List<Employee> list = EmployeeDAO.listEmployee();
+    System.out.println("Employee list de size:"+list.size());
+    System.out.println(list);
     request.setAttribute("employeeList", list);
     
     %>
@@ -49,11 +51,11 @@
 	 		<c:forEach items="${list}" var="employee" >
 	 			<tr bgcolor=#FFFFFF>
 	 				<td><input type="checkbox" name="id" value="${employee.id}"/></td>
-	 				<td>${employee.id}</td>
-	 				<td>${employee.name}</td>
-	 				<td>${employee.department.name}</td>
-	 				<td>${employee.sex}</td>
-	 				<td>${employee.employedDate}</td>
+	 				<td>employee.getId()</td>
+	 				<td>employee.getName()</td>
+	 				<td>employee.getDepartment().getName()</td>
+	 				<td>employee.getSex()}</td>
+	 				<td>employee.getEmployedDate()</td>
 	 				<td>
 	 					<a href="listEmployee.jsp?action=edit&id=${employee.id}" >edit</a>
 	 					<a href="listEmployee.jsp?action=del&id=${employee.id}" onclick="return confirm('confirm to delete the employee?')">delete</a>

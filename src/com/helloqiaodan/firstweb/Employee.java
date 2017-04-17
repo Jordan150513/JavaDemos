@@ -34,11 +34,11 @@ public class Employee {
 		this.sex = sex;
 	}
 
-	public Date getEmployedDate() {
+	public String getEmployedDate() {
 		return employedDate;
 	}
 
-	public void setEmployedDate(Date employedDate) {
+	public void setEmployedDate(String employedDate) {
 		this.employedDate = employedDate;
 	}
 
@@ -54,9 +54,20 @@ public class Employee {
 	private String name;
 	private String sex;
 	
-	private Date employedDate;
+	private String employedDate;
 	
 	private Department department;
 
+	public Employee(String name, String sex, String employedDate, Department department) {
+		super();
+		this.name = name;
+		this.sex = sex;
+		this.employedDate = employedDate;
+		this.department = department;
+	}
+
+	public Employee() {
+		super();
+	}
 	
 }

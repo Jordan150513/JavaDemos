@@ -13,7 +13,7 @@
      boolean isEdit = "edit".equals(action);
      boolean isMale = isEdit&&"男".equals(sex);
      
-     List<Department> departmentList = (List)DepartmentDAO.listDepartment();
+     List<Department> departmentList = (List<Department> )DepartmentDAO.listDepartment();
      System.out.println(departmentList);
     %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -25,11 +25,11 @@
 </head>
 <body>
 	<script type="text/javascript" src="js/calender.js"></script>
-	<form action="operatePerson.jsp" method="post">
+	<form action="operateEmployee.jsp" method="get">
 		<input type="hidden" name="action" value="<%=isEdit?"save":"add" %>" />
 		<input type="hidden" name="id" value="<%=isEdit?id:"" %>" />
 		<fieldset>
-			<legend><%=isEdit?"Edit Person Info":"Add Person" %></legend>
+			<legend><%=isEdit?"Edit Employee Info":"Add Employee" %></legend>
 			<table>
 				<tr>
 					<td>name</td>
@@ -42,10 +42,9 @@
 							 <option value="">请选择...</option>
 							 <%
 							for(Department depart:departmentList){
-								out.println("<option id='"+depart.getId()+"' value='"+depart.getName()+"'>"+depart.getName()+"</option> ");
+								out.println("<option id='"+depart.getId()+"' value='"+depart.getId()+"'>"+depart.getName()+"</option> ");
 							}
 							 %>
-
 						</select>
 					</td>
 				</tr>
@@ -53,7 +52,7 @@
 					<td>sex</td>
 					<td>
 						<input type="radio" name="sex" value="male" id="sex_male" <%=isMale?"checked":"" %> /><label>male</label>
-						<input type="radio" name="sex" value="femal" id="sex_female" <%=isMale?"":"checked" %> /><label>female</label>
+						<input type="radio" name="sex" value="female" id="sex_female" <%=isMale?"":"checked" %> /><label>female</label>
 					</td>
 				</tr>
 				<tr>
