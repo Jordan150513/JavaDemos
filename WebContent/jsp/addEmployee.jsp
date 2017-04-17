@@ -11,8 +11,8 @@
      String sex = (String)request.getAttribute("sex");
      String employedDate = (String)request.getAttribute("employedDate");
      boolean isEdit = "edit".equals(action);
-     boolean isMale = isEdit&&"男".equals(sex);
-     
+     boolean isMale = isEdit&&"male".equals(sex);
+     System.out.println(isEdit);
      List<Department> departmentList = (List<Department> )DepartmentDAO.listDepartment();
      System.out.println(departmentList);
     %>
@@ -39,7 +39,7 @@
 					<td>department</td>
 					<td>
 						<select id="department" name="department">
-							 <option value="">请选择...</option>
+							 <option value="<%=isEdit?department:"" %>"><%=isEdit?department:"请选择..." %>"</option>
 							 <%
 							for(Department depart:departmentList){
 								out.println("<option id='"+depart.getId()+"' value='"+depart.getId()+"'>"+depart.getName()+"</option> ");

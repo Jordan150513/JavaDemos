@@ -47,7 +47,7 @@
 	 			out.println("<td>"+ee.getDepartment().getName()+"</td>");
 	 			out.println("<td>"+ee.getSex()+"</td>");
 	 			out.println("<td>"+ee.getEmployedDate()+"</td>");
-	 			out.println("<td><a href='listEmployee.jsp?action=edit&id=${employee.id}' >edit</a>     <a href='listEmployee.jsp?action=del&id=${employee.id}' onclick='return confirm('confirm to delete the employee?')'>delete</a></td>");
+	 			out.println("<td><a href='addEmployee.jsp?action=edit&id=${employee.id}' >edit</a>     <a href='listEmployee.jsp?action=del&id=${employee.id}' onclick='return confirm('confirm to delete the employee?')'>delete</a></td>");
 	 			out.println("</tr>");
 	 		}
 	 		%>
