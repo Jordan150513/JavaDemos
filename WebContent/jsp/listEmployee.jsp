@@ -12,18 +12,6 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     
     <%
-    //create some data to show
-/*     for(int i=0;i<5;i++){
-    	Employee ee = new Employee();
-    	ee.setName("wang_"+i);
-    	ee.setSex(i%2==1?"1":"0");
-    	ee.setEmployedDate(new Date());
-    	Integer departID = i+1;
-    	ee.setDepartment(DepartmentDAO.find(departID));
-    	EmployeeDAO.insert(ee);
-    	System.out.println(ee.toString());
-    } */
-    
     List<Employee> list = EmployeeDAO.listEmployee();
     System.out.println("Employee list de size:"+list.size());
     System.out.println(list);
@@ -48,7 +36,22 @@
 	 			<th>EmployeeDate</th>
 	 			<th>Operation</th>
 	 		</tr>
-	 		<c:forEach items="${list}" var="employee" >
+	 		
+	 		<%
+	 		for(Employee ee:list){
+	 			out.println("<tr bgcolor=#FFFFFF>");
+	 			out.println("<td><input type='checkbox' name='id' value='"+ee.getId()+"'/></td>");
+	 			out.println("<td>"+ee.getId()+"</td>");
+	 			out.println("<td>"+ee.getName()+"</td>");
+	 			out.println("<td>"+ee.getDepartment().getName()+"</td>");
+	 			out.println("<td>"+ee.getSex()+"</td>");
+	 			out.println("<td>"+ee.getEmployedDate()+"</td>");
+	 			out.println("<td><a href='listEmployee.jsp?action=edit&id=${employee.id}' >edit</a>     <a href='listEmployee.jsp?action=del&id=${employee.id}' onclick='return confirm('confirm to delete the employee?')'>delete</a></td>");
+	 			out.println("</tr>");
+	 		}
+	 		%>
+	 		
+<%-- 	 		<c:forEach items="${list}" var="employee" >
 	 			<tr bgcolor=#FFFFFF>
 	 				<td><input type="checkbox" name="id" value="${employee.id}"/></td>
 	 				<td>employee.getId()</td>
@@ -61,7 +64,7 @@
 	 					<a href="listEmployee.jsp?action=del&id=${employee.id}" onclick="return confirm('confirm to delete the employee?')">delete</a>
 	 				</td>
 	 			</tr>
-	 		</c:forEach>
+	 		</c:forEach> --%>
 	 	</table>
 	</form>
 </body>
