@@ -9,7 +9,7 @@
 			<transactionManager type="JDBC"/>
 			<dataSource type="POOLED">
 				<property name="driver"  value="com.mysql.jdbc.Driver"/>
-				<property name="url"  value="jdbc:mysql://127.0.0.1:3306/mybatis?characterENcoding=UTF-8;useSSL=false "/>
+				<property name="url"  value="jdbc:mysql://127.0.0.1:3306/databaseWebQD?characterENcoding=UTF-8;useSSL=false "/>
 				<property name="username"  value="root"/>
 				<property name="password"  value="1234"/>
 				
@@ -18,5 +18,6 @@
 	</environments>
 	<mappers>
 		<mapper resource="com/qiaodan/mapper/UserMapper.xml" />
+		<mapper resource="com/qiaodan/mapper/DepartmentMapper.xml" />
 	</mappers>
 </configuration> 

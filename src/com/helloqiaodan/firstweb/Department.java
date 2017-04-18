@@ -22,5 +22,14 @@ public class Department {
 	private Integer id;
 	private String name;
 	
+	public Department(String name) {
+		super();
+		this.name = name;
+	}
+	
+	public Department() {
+		super();
+	}
+	
 	
 }
